@@ -1,33 +1,34 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import './App.css';
+import Season from "./components/season";
 
 class App extends Component {
-  state= {
-    lat : null,
+  state = {
+    lat: null,
     error: ''
   }
-  render() {
+
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
       postion => {
-        this.setState({lat : postion.coords.latitude})
+        this.setState({ lat: postion.coords.latitude })
       },
       error => {
         this.setState({
-          error : error.message
+          error: error.message
         })
       }
     )
-    if(this.state.lat != null && this.state.error == '' ){
-      return <div>Longitude: {this.state.lat}</div>
-    }
-    
-    if(this.state.lat == null && this.state.error != '' ){
-      return <div>Error: {this.state.error}</div>
-    }
+  }
+  render() {
 
-    return <div>Loading</div>
-    
+    return (
+      <div>
+        <Season lat = {this.state.lat} />
+      </div>
+    )
+
   }
 }
 
