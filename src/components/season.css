@@ -1,0 +1,31 @@
+i.icon-left {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 7rem;
+}
+i.icon-right {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 7rem;
+}
+.season-wrap {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fas.fa-sun {
+  color: #ea0a0a;
+}
+.fas.fa-snowflake{
+  color: rgb(114, 114, 255);
+}
+div#summer-wrap {
+  background: #f39749;
+  color: white;
+}
+div#winter-wrap {
+  background: #d4f3ff;
+}

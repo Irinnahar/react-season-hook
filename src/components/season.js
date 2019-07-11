@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import "./season.css";
 
 const seasonConfig  = {
   winter : {
@@ -24,10 +25,10 @@ const Season = (props) => {
   const season = DetermineSeason(props.lat, new Date().getMonth());
   const {text, icon } = seasonConfig[season];
   return (
-    <div>
-      <i className={`fas ${icon}`}></i>
+    <div className="season-wrap" id={season === 'summer' ? "summer-wrap" : "winter-wrap"}>
+      <i className={`icon-left  fas ${icon}`}></i>
       <h2>{text} </h2>
-      <i className={`fas ${icon}`}></i>
+      <i className={`icon-right fas ${icon}`}></i>
     </div>
   )
 }
